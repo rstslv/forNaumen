@@ -1,0 +1,47 @@
+<html>
+<title>Заметки</title>
+<body>
+
+<div align="center">
+    <form method="post">
+        <input width="40%" type="text" name="title" placeholder="Заголовок"/>
+        <input width="40%" type="text" name="memo" placeholder="Заметка"/>
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+<div align="center">
+<form method="post" action="filter">
+    <input width="70%" type="text" name="filter">
+    <button type="submit>">Найти</button>
+</form>
+</div>
+<div align="center">
+    <form method="get" action="all">
+        <button type="submit>">Все заметки</button>
+    </form>
+</div>
+
+
+
+<h4 align="center">Заметки</h4>
+{{#notes}}
+    <table border="2" align="center">
+        <tbody>
+        <tr>
+            <td width="700">{{#title}}
+                <a href="/notedata?id={{id}}" name="id" value="{{id}}">{{title}}</a>
+            {{/title}}
+            </td>
+            <td width="50"><form method="post" action="delete">
+                <button type="submit" name="id" value="{{id}}">Удалить</button>
+            </form>
+            </td>
+        </tr>
+        </tbody>
+        </tr>
+    </table>
+
+{{/notes}}
+
+</body>
+</html>
